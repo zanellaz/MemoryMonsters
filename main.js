@@ -10,7 +10,7 @@ main()
 
 async function getPage() {
   try {
-    await axios.get('https://mysingingmonsters.fandom.com/wiki/Monsters#Natural_Monsters')
+    await axios.get('https://mysingingmonsters.fandom.com/wiki/Monsters#Natural_Monsters', {headers: {'Access-Control-Allow-Origin': '*'}})
         .then(({ data }) => {
             dataDiv.innerHTML = data
         })
