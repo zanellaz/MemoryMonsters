@@ -1,6 +1,8 @@
 const dataDiv = document.getElementById('useData')
 const mainDiv = document.getElementById('main')
 
+const gameMonsters = ['Noggin', 'Mammott', 'Toe', 'Potbelly', 'Fwog', 'Shrubb', 'Furcorn']
+
 async function main() {
     await getPage()
     getContent()
@@ -10,7 +12,7 @@ main()
 
 async function getPage() {
   try {
-    await axios.get('https://mysingingmonsters.fandom.com/wiki/Monsters#Natural_Monsters', {headers: {'Access-Control-Allow-Origin': '*'}})
+    await axios.get('https://mysingingmonsters.fandom.com/wiki/Monsters')
         .then(({ data }) => {
             dataDiv.innerHTML = data
         })
